@@ -1,0 +1,37 @@
+application: blog
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /beachhouse\.jpg
+  static_files: static/beachhouse.jpg
+  upload: beachhouse\.jpg
+
+- url: /project/.html
+  static_files: static/project.html
+  upload: styles/.ccs
+
+- url: /app/.yaml
+  static_files: static/app.yaml
+  upload: app/.yaml
+
+- url: /index/.yaml
+  static_files: static/index.yaml
+  upload: index/.yaml
+
+- url: /main/.py
+  static_files: static/main.py
+  upload: main/.py
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
